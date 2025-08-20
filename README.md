@@ -1,4 +1,4 @@
-#RIDE vs. Feres Sentiment & Theme Analyzer
+RIDE vs. Feres Sentiment & Theme Analyzer
 
 A Streamlit web app to analyze  RIDE and  Feres reviews, providing sentiment and thematic insights with support for English and Amharic. Built with Python, it uses BERT for sentiment analysis and TF-IDF for theme extraction, offering an interactive UI for filtering, visualizing, and analyzing reviews.
 
@@ -21,8 +21,8 @@ cd ride-hailing-sentiment-analysis
 
 Set Up Virtual Environment:
 python -m venv venv
-source venv/Scripts/activate  # Windows
-# or source venv/bin/activate  # Linux/Mac
+source venv/Scripts/activate   Windows
+or source venv/bin/activate   Linux/Mac
 
 
 Install Dependencies:
