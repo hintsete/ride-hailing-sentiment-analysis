@@ -24,7 +24,7 @@ def group_themes(keywords, app_name, sentiment):
     themes = {
         'Pricing': ['price', 'cost', 'expensive', 'cheap', 'fare', 'costly', 'affordable', 'ዋጋ'],
         'Safety': ['safe', 'safety', 'dangerous', 'secure', 'risk', 'unsafe'],
-        'Usability': ['app', 'interface', 'easy', 'user', 'navigate', 'friendly', 'bug','crash', 'update'],
+        'Usability': ['app', 'interface', 'easy', 'user', 'navigate', 'friendly', 'bug','crash', 'update','buggy','trash'],
         'Service': ['driver', 'service', 'customer', 'support', 'staff', 'ride'],
         'Reliability': ['reliable', 'delay', 'wait', 'time', 'late', 'prompt']
     }

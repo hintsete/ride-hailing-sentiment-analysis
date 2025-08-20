@@ -35,9 +35,9 @@ def classify_sentiment(text):
         print_flush(f"Error classifying text '{text[:50]}...': {e}")
         return 'neutral'
 
-def analyze_sentiment(app_name, sample_size=None):
+def analyze_sentiment(app_name):
     """
-    Apply sentiment analysis to cleaned reviews.
+    Apply sentiment analysis to all cleaned reviews.
     """
     processed_path = os.path.join('data', 'processed', f'{app_name}_cleaned.csv').replace('\\', '/')
     if not os.path.exists(processed_path):
@@ -52,12 +52,7 @@ def analyze_sentiment(app_name, sample_size=None):
             print_flush(f"Warning: No reviews to analyze for {app_name}")
             return None
         
-        # Sample reviews for testing (optional)
-        # if sample_size is not None:
-        #     df = df.sample(n=min(sample_size, len(df)), random_state=42)
-        #     print_flush(f"Sampled {len(df)} reviews for {app_name}")
-        
-        # Apply sentiment analysis with progress bar
+        # Apply sentiment analysis to all reviews
         print_flush(f"Classifying sentiments for {app_name}...")
         df['sentiment'] = [classify_sentiment(text) for text in tqdm(df['cleaned_content'], desc=f"Processing {app_name}")]
         
@@ -73,10 +68,9 @@ if __name__ == "__main__":
     print_flush("Starting sentiment analysis...")
     for app in ['ride', 'feres']:
         print_flush(f"\nAnalyzing {app}...")
-        result = analyze_sentiment(app, sample_size=100)  # Sample 100 reviews for testing
+        result = analyze_sentiment(app)  # Process all reviews
         if result is not None:
             print_flush(f"Completed sentiment analysis for {app} with {len(result)} reviews")
         else:
             print_flush(f"Failed to process {app}")
         print_flush("-" * 50)
-
